@@ -1,0 +1,84 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Profile Title with Edit Button -->
+    <TextView
+        android:id="@+id/profileTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Profile"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="20dp" />
+
+    <!-- Edit Profile Button (Pen Icon) -->
+
+
+    <!-- The rest of your profile layout -->
+    <!-- Name Label and Display -->
+    <TextView
+        android:id="@+id/nameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name :"
+        android:textSize="18sp"
+        android:layout_below="@id/profileTitle"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:id="@+id/displayName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Client Name"
+        android:textSize="16sp"
+        android:layout_below="@id/nameLabel"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Email Label and Display -->
+    <TextView
+        android:id="@+id/emailLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email :"
+        android:textSize="18sp"
+        android:layout_below="@id/displayName"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:id="@+id/displayEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Client Email"
+        android:textSize="16sp"
+        android:layout_below="@id/emailLabel"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Phone Label and Display -->
+    <TextView
+        android:id="@+id/phoneLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mobile Phone :"
+        android:textSize="18sp"
+        android:layout_below="@id/displayEmail"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:id="@+id/displayPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Client Phone"
+        android:textSize="16sp"
+        android:layout_below="@id/phoneLabel"
+        android:layout_marginBottom="16dp" />
+</RelativeLayout>

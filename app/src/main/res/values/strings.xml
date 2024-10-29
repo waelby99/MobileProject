@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Servito</string>
+    <string-array name="role_array">
+        <item>ROLE_CLIENT</item>
+        <item>ROLE_RESTAURANT</item>
+    </string-array>
+</resources>
