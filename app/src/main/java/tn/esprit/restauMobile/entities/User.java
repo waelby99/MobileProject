@@ -2,7 +2,11 @@ package tn.esprit.restauMobile.entities;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
+import androidx.room.Relation;
+
+import java.util.List;
 
 @Entity(tableName = "user")
 public class User {
@@ -24,6 +28,51 @@ public class User {
 
     @ColumnInfo
     private String role;
+
+    @Ignore
+    @Relation(
+            entity = Restaurant.class,
+            parentColumn = "id",
+            entityColumn = "userId"
+    )
+    private Restaurant restaurant;
+
+    // Relation un-à-plusieurs avec Stock
+    @Ignore
+    @Relation(
+            entity = Stock.class,
+            parentColumn = "id",
+            entityColumn = "userId"
+    )
+    private List<Stock> stocks;
+
+    // Relation un-à-plusieurs avec Commande
+    @Ignore
+    @Relation(
+            entity = Commande.class,
+            parentColumn = "id",
+            entityColumn = "userId"
+    )
+    private List<Commande> commandes;
+
+    // Relation un-à-plusieurs avec Reservation
+    @Ignore
+    @Relation(
+            entity = Reservation.class,
+            parentColumn = "id",
+            entityColumn = "userId"
+    )
+    private List<Reservation> reservations;
+
+    // Relation un-à-plusieurs avec Reclamation
+    @Ignore
+    @Relation(
+            entity = Reclamation.class,
+            parentColumn = "id",
+            entityColumn = "userId"
+    )
+    private List<Reclamation> reclamations;
+
 
     public User() {
     }
