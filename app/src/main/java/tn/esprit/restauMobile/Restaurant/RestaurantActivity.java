@@ -4,15 +4,16 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import tn.esprit.restauMobile.Client.ProfileActivity;
 import tn.esprit.restauMobile.MainActivity;
 import tn.esprit.restauMobile.R;
+import tn.esprit.restauMobile.Restaurant.Stock.MesStocksActivity;
 
 public class RestaurantActivity extends Activity {
-    Button navHome, navProfile, navSettings, navSignOut;
+    Button navHome, navProfile, navMesStocks, navSignOut;  // Updated the variable name
     SharedPreferences sharedPreferences;
 
     @Override
@@ -30,38 +31,26 @@ public class RestaurantActivity extends Activity {
         // Initialize navbar buttons
         navHome = findViewById(R.id.nav_home);
         navProfile = findViewById(R.id.nav_profile);
-        navSettings = findViewById(R.id.nav_settings);
+        navMesStocks = findViewById(R.id.nav_mes_stocks);  // Updated ID to "nav_mes_stocks"
         navSignOut = findViewById(R.id.nav_signout);
 
         // Set up navbar button listeners
-        navHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Handle Home navigation (can start a new activity or stay in current one)
-            }
+        navHome.setOnClickListener(v -> {
+            // Handle Home navigation (can start a new activity or stay in current one)
         });
 
-        navProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Handle Profile navigation
-            }
+        navProfile.setOnClickListener(v -> {
+            Intent intent = new Intent(RestaurantActivity.this, ProfileActivity.class);
+            startActivity(intent);
         });
 
-        navSettings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Handle Settings navigation
-            }
+        navMesStocks.setOnClickListener(v -> {
+            Intent intent = new Intent(RestaurantActivity.this, MesStocksActivity.class);
+            startActivity(intent);
         });
 
         // Handle Sign Out
-        navSignOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                signOut();  // Call the signOut method
-            }
-        });
+        navSignOut.setOnClickListener(v -> signOut());
     }
 
     // Sign-out method to clear SharedPreferences and redirect to login screen

@@ -12,6 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Servito"
         tools:targetApi="31">
+        <activity android:name=".Restaurant.Stock.EditStockActivity"></activity>
+        <activity android:name=".Restaurant.Stock.AddStockActivity"></activity>
+        <activity android:name=".Restaurant.Stock.MesStocksActivity"></activity>
+        <activity android:name=".Client.ChangePasswordActivity"></activity>
         <activity android:name=".Client.ClientActivity"></activity>
         <activity android:name=".Restaurant.RestaurantActivity"></activity>
         <activity android:name=".Client.ProfileActivity" />

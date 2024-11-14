@@ -3,7 +3,7 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
-    <!-- Profile Title with Edit Button -->
+    <!-- Profile Title -->
     <TextView
         android:id="@+id/profileTitle"
         android:layout_width="wrap_content"
@@ -15,11 +15,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginBottom="20dp" />
 
-    <!-- Edit Profile Button (Pen Icon) -->
-
-
-    <!-- The rest of your profile layout -->
-    <!-- Name Label and Display -->
+    <!-- Name Label and Editable Field -->
     <TextView
         android:id="@+id/nameLabel"
         android:layout_width="wrap_content"
@@ -31,54 +27,73 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="4dp" />
 
-    <TextView
-        android:id="@+id/displayName"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Client Name"
+        android:hint="Client Name"
         android:textSize="16sp"
         android:layout_below="@id/nameLabel"
         android:layout_marginBottom="16dp" />
 
-    <!-- Email Label and Display -->
+    <!-- Email Label and Editable Field -->
     <TextView
         android:id="@+id/emailLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Email :"
         android:textSize="18sp"
-        android:layout_below="@id/displayName"
+        android:layout_below="@id/editName"
         android:layout_alignParentStart="true"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="4dp" />
 
-    <TextView
-        android:id="@+id/displayEmail"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/editEmail"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Client Email"
+        android:hint="Client Email"
         android:textSize="16sp"
         android:layout_below="@id/emailLabel"
         android:layout_marginBottom="16dp" />
 
-    <!-- Phone Label and Display -->
+    <!-- Phone Label and Editable Field -->
     <TextView
         android:id="@+id/phoneLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Mobile Phone :"
         android:textSize="18sp"
-        android:layout_below="@id/displayEmail"
+        android:layout_below="@id/editEmail"
         android:layout_alignParentStart="true"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="4dp" />
 
-    <TextView
-        android:id="@+id/displayPhone"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/editPhone"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Client Phone"
+        android:hint="Client Phone"
         android:textSize="16sp"
         android:layout_below="@id/phoneLabel"
         android:layout_marginBottom="16dp" />
+
+    <!-- Save Button -->
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:layout_below="@id/editPhone"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:id="@+id/changePasswordButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change Password"
+        android:layout_below="@id/saveButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
 </RelativeLayout>

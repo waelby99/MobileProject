@@ -2,33 +2,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Main content layout -->
-    <RelativeLayout
-        android:id="@+id/main_content"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/navbar">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <TextView
-            android:id="@+id/textView"
+        <EditText
+            android:id="@+id/productNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Product Name"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/quantityEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Quantity"
+            android:inputType="number"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/saveButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Restaurant Activity"
-            android:textSize="20sp"
-            android:layout_centerInParent="true" />
-    </RelativeLayout>
+            android:text="Save"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp" />
 
-    <!-- Navbar at the bottom -->
+    </LinearLayout>
+
+    <!-- Navbar en bas -->
     <LinearLayout
         android:id="@+id/navbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:orientation="horizontal"
         android:background="#000000"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:gravity="center"
+        android:layout_alignParentBottom="true">
 
-        <!-- Home button -->
         <Button
             android:id="@+id/nav_home"
             android:layout_width="0dp"
@@ -38,7 +54,6 @@
             android:textColor="#FFFFFF"
             android:background="?android:attr/selectableItemBackground" />
 
-        <!-- Profile button -->
         <Button
             android:id="@+id/nav_profile"
             android:layout_width="0dp"
@@ -48,17 +63,15 @@
             android:textColor="#FFFFFF"
             android:background="?android:attr/selectableItemBackground" />
 
-        <!-- Mes Stocks button (renamed from Settings) -->
         <Button
             android:id="@+id/nav_mes_stocks"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Mes Stocks"
-        android:textColor="#FFFFFF"
-        android:background="?android:attr/selectableItemBackground" />
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Mes Stocks"
+            android:textColor="#FFFFFF"
+            android:background="?android:attr/selectableItemBackground" />
 
-        <!-- Sign Out button -->
         <Button
             android:id="@+id/nav_signout"
             android:layout_width="0dp"
@@ -68,5 +81,4 @@
             android:textColor="#FFFFFF"
             android:background="?android:attr/selectableItemBackground" />
     </LinearLayout>
-
 </RelativeLayout>

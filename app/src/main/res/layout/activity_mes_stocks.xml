@@ -1,34 +1,43 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <!-- Main content layout -->
-    <RelativeLayout
+    <!-- Content of the activity -->
+    <LinearLayout
         android:id="@+id/main_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/navbar">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView"
+        <!-- Add Stock Button -->
+        <Button
+            android:id="@+id/addStockButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Restaurant Activity"
-            android:textSize="20sp"
-            android:layout_centerInParent="true" />
-    </RelativeLayout>
+            android:text="Add Stock"
+            android:layout_margin="16dp" />
+
+        <!-- RecyclerView for displaying stock list -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewStocks"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
 
     <!-- Navbar at the bottom -->
     <LinearLayout
         android:id="@+id/navbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:orientation="horizontal"
         android:background="#000000"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:gravity="center">
 
-        <!-- Home button -->
         <Button
             android:id="@+id/nav_home"
             android:layout_width="0dp"
@@ -38,7 +47,6 @@
             android:textColor="#FFFFFF"
             android:background="?android:attr/selectableItemBackground" />
 
-        <!-- Profile button -->
         <Button
             android:id="@+id/nav_profile"
             android:layout_width="0dp"
@@ -48,17 +56,15 @@
             android:textColor="#FFFFFF"
             android:background="?android:attr/selectableItemBackground" />
 
-        <!-- Mes Stocks button (renamed from Settings) -->
         <Button
             android:id="@+id/nav_mes_stocks"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Mes Stocks"
-        android:textColor="#FFFFFF"
-        android:background="?android:attr/selectableItemBackground" />
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Mes Stocks"
+            android:textColor="#FFFFFF"
+            android:background="?android:attr/selectableItemBackground" />
 
-        <!-- Sign Out button -->
         <Button
             android:id="@+id/nav_signout"
             android:layout_width="0dp"
@@ -69,4 +75,4 @@
             android:background="?android:attr/selectableItemBackground" />
     </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>
