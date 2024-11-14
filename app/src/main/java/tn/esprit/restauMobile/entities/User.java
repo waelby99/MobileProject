@@ -35,7 +35,7 @@ public class User {
             parentColumn = "id",
             entityColumn = "userId"
     )
-    private Restaurant restaurant;
+    private List<Restaurant> restaurants;
 
     // Relation un-à-plusieurs avec Stock
     @Ignore

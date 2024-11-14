@@ -14,7 +14,7 @@ import tn.esprit.restauMobile.R;
 public class RestaurantActivity extends Activity {
     Button navHome, navProfile, navSettings, navSignOut;
     SharedPreferences sharedPreferences;
-
+    Button buttonAddRestaurant, buttonShowRestaurants;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,12 +26,29 @@ public class RestaurantActivity extends Activity {
         // Example content for restaurant-specific activity
         TextView textView = findViewById(R.id.textView);
         textView.setText("Welcome, Restaurant Owner!");
+        buttonAddRestaurant = findViewById(R.id.add_restaurant_button);
+        buttonShowRestaurants = findViewById(R.id.nav_profile);
 
         // Initialize navbar buttons
         navHome = findViewById(R.id.nav_home);
-        navProfile = findViewById(R.id.nav_profile);
         navSettings = findViewById(R.id.nav_settings);
         navSignOut = findViewById(R.id.nav_signout);
+        buttonAddRestaurant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RestaurantActivity.this, AddRestaurantActivity.class);
+                startActivity(intent);
+            }
+        });
+        buttonShowRestaurants.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Démarrer l'activité RestaurantsListActivity
+                Intent intent = new Intent(RestaurantActivity.this, RestaurantsListActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         // Set up navbar button listeners
         navHome.setOnClickListener(new View.OnClickListener() {
@@ -41,12 +58,7 @@ public class RestaurantActivity extends Activity {
             }
         });
 
-        navProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Handle Profile navigation
-            }
-        });
+
 
         navSettings.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +74,7 @@ public class RestaurantActivity extends Activity {
                 signOut();  // Call the signOut method
             }
         });
+
     }
 
     // Sign-out method to clear SharedPreferences and redirect to login screen
@@ -76,4 +89,6 @@ public class RestaurantActivity extends Activity {
         startActivity(intent);
         finish();  // Finish current activity so user can't return to it
     }
+
+
 }

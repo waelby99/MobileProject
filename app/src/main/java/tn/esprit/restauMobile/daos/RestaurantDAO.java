@@ -30,4 +30,6 @@ public interface RestaurantDAO {
 
     @Query("SELECT * FROM restaurant WHERE userId = :userId")
     Restaurant getRestaurantByUserId(int userId);
+    @Query("SELECT * FROM restaurant WHERE userId = :userId")
+    List<Restaurant> getRestaurantsByUserId(int userId);
 }

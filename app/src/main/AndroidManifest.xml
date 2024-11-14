@@ -14,6 +14,10 @@
         tools:targetApi="31">
         <activity android:name=".Client.ClientActivity"></activity>
         <activity android:name=".Restaurant.RestaurantActivity"></activity>
+        <activity android:name=".Restaurant.AddRestaurantActivity"></activity>
+        <activity android:name=".Restaurant.RestaurantsListActivity"></activity>
+
+
         <activity android:name=".Client.ProfileActivity" />
         <activity android:name=".Client.EditProfileActivity" />
         <activity
