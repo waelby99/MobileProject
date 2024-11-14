@@ -22,6 +22,46 @@ public class Stock {
     // Relation avec User (un-à-plusieurs)
     private int userId;
 
+    public int getStockId() {
+        return stockId;
+    }
 
+    public void setStockId(int stockId) {
+        this.stockId = stockId;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public Stock() {
+    }
+
+    public Stock(int stockId, String productName, int quantity, int userId) {
+        this.stockId = stockId;
+        this.productName = productName;
+        this.quantity = quantity;
+        this.userId = userId;
+    }
 }
 

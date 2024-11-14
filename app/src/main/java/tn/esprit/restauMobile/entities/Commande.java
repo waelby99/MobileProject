@@ -17,13 +17,51 @@ public class Commande {
     private int menuId;
 
     // Relation avec User (un-à-plusieurs)
-
     private int userId;
 
     @ColumnInfo(name = "date")
     private String date;
 
-    // Getters et Setters
-    // ...
+    public int getCommandeId() {
+        return commandeId;
+    }
+
+    public void setCommandeId(int commandeId) {
+        this.commandeId = commandeId;
+    }
+
+    public int getMenuId() {
+        return menuId;
+    }
+
+    public void setMenuId(int menuId) {
+        this.menuId = menuId;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public Commande() {
+    }
+
+    public Commande(int menuId, int commandeId, int userId, String date) {
+        this.menuId = menuId;
+        this.commandeId = commandeId;
+        this.userId = userId;
+        this.date = date;
+    }
 }
 
