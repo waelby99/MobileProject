@@ -40,14 +40,7 @@ public class RestaurantActivity extends Activity {
                 startActivity(intent);
             }
         });
-        buttonShowRestaurants.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Démarrer l'activité RestaurantsListActivity
-                Intent intent = new Intent(RestaurantActivity.this, RestaurantsListActivity.class);
-                startActivity(intent);
-            }
-        });
+
 
 
         // Set up navbar button listeners

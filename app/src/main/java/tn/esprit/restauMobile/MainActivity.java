@@ -1,20 +1,16 @@
 package tn.esprit.restauMobile;
 
-import static androidx.core.content.ContextCompat.startActivity;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import tn.esprit.restauMobile.Client.ClientActivity;
 import tn.esprit.restauMobile.Restaurant.RestaurantActivity;
-import tn.esprit.restauMobile.Restaurant.RestaurantsListActivity;
 import tn.esprit.restauMobile.database.AppDataBase;
 import tn.esprit.restauMobile.entities.User;
 import tn.esprit.restauMobile.util.HashingUtil;
@@ -66,7 +62,7 @@ public class MainActivity extends Activity {
                         startActivity(intent);
                     } else if (role.equals("ROLE_RESTAURANT")) {
                         // Corrected: Pass userId to RestaurantActivity or RestaurantsListActivity
-                        Intent intent = new Intent(MainActivity.this, RestaurantsListActivity.class);
+                        Intent intent = new Intent(MainActivity.this, RestaurantActivity.class);
                         intent.putExtra("userId", user.getId());  // Pass userId as an extra
                         startActivity(intent);
                     } else {
@@ -97,20 +93,25 @@ public class MainActivity extends Activity {
         boolean isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false);
         if (isLoggedIn) {
             String role = sharedPreferences.getString("role", "");
-            int userId = sharedPreferences.getInt("id", -1);  // Retrieve userId from SharedPreferences
+            int userId = sharedPreferences.getInt("id", -1);
+            String userEmail = sharedPreferences.getString("email", null); // Assurez-vous de la clé "email"
+
+            // Vérifiez si l'email est récupéré
+            Toast.makeText(this, "Récupération de l'email: " + userEmail, Toast.LENGTH_SHORT).show();
 
             if (role.equals("ROLE_CLIENT")) {
                 Intent intent = new Intent(MainActivity.this, ClientActivity.class);
                 startActivity(intent);
                 finish();
             } else if (role.equals("ROLE_RESTAURANT")) {
-                // Pass userId to RestaurantsListActivity
-                Intent intent = new Intent(MainActivity.this, RestaurantsListActivity.class);
-                intent.putExtra("userId", userId);  // Pass userId as an extra
+                Intent intent = new Intent(MainActivity.this, RestaurantActivity.class);
+                intent.putExtra("userId", userId);
+                intent.putExtra("email", userEmail);
                 startActivity(intent);
                 finish();
             }
         }
     }
+
 }
 
